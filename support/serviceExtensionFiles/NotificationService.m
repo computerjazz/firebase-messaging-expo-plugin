@@ -1,6 +1,5 @@
-#import <OneSignalFramework/OneSignalFramework.h>
-
 #import "NotificationService.h"
+#import "FirebaseMessaging.h"
 
 @interface NotificationService ()
 
@@ -16,13 +15,11 @@
     self.receivedRequest = request;
     self.contentHandler = contentHandler;
     self.bestAttemptContent = [request.content mutableCopy];
-    [OneSignal didReceiveNotificationExtensionRequest:self.receivedRequest
-                       withMutableNotificationContent:self.bestAttemptContent
-                                   withContentHandler:self.contentHandler];
+    [[FIRMessaging extensionHelper] populateNotificationContent:self.bestAttemptContent withContentHandler:contentHandler];
 }
 
 - (void)serviceExtensionTimeWillExpire {
-    [OneSignal serviceExtensionTimeWillExpireRequest:self.receivedRequest withMutableNotificationContent:self.bestAttemptContent];
+    // [OneSignal serviceExtensionTimeWillExpireRequest:self.receivedRequest withMutableNotificationContent:self.bestAttemptContent];
     self.contentHandler(self.bestAttemptContent);
 }
 

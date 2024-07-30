@@ -3,11 +3,11 @@
  * @see https://documentation.onesignal.com/docs/react-native-sdk-setup#step-4-install-for-ios-using-cocoapods-for-ios-apps
  */
 
-import { ConfigPlugin } from '@expo/config-plugins';
-import { OneSignalPluginProps } from '../types/types';
-import { withOneSignalAndroid } from './withOneSignalAndroid';
-import { withOneSignalIos } from './withOneSignalIos';
-import { validatePluginProps } from '../support/helpers';
+import { ConfigPlugin } from "@expo/config-plugins";
+import { OneSignalPluginProps } from "../types/types";
+import { withFirebaseMessagingAndroid } from "./withFirebaseMessagingAndroid";
+import { withFirebaseMessagingIos } from "./withFirebaseMessagingIos";
+import { validatePluginProps } from "../support/helpers";
 
 const withOneSignal: ConfigPlugin<OneSignalPluginProps> = (config, props) => {
   // if props are undefined, throw error
@@ -19,8 +19,8 @@ const withOneSignal: ConfigPlugin<OneSignalPluginProps> = (config, props) => {
 
   validatePluginProps(props);
 
-  config = withOneSignalIos(config, props);
-  config = withOneSignalAndroid(config, props);
+  config = withFirebaseMessagingIos(config, props);
+  config = withFirebaseMessagingAndroid(config, props);
 
   return config;
 };
