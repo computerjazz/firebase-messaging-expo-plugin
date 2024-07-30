@@ -1,1 +1,1 @@
-module.exports = require("./build/onesignal/withFirebaseMessaging.js");
+module.exports = require("./build/firebase/withFirebaseMessaging.js");
