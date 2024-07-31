@@ -20,7 +20,7 @@ const withOneSignal: ConfigPlugin<OneSignalPluginProps> = (config, props) => {
   validatePluginProps(props);
 
   config = withFirebaseMessagingIos(config, props);
-  config = withFirebaseMessagingAndroid(config, props);
+  // config = withFirebaseMessagingAndroid(config, props);
 
   return config;
 };
