@@ -41,9 +41,9 @@ const withAppEnvironment: ConfigPlugin<OneSignalPluginProps> = (
   return withEntitlementsPlist(config, (newConfig) => {
     if (onesignalProps?.mode == null) {
       throw new Error(`
-        Missing required "mode" key in your app.json or app.config.js file for "onesignal-expo-plugin".
+        Missing required "mode" key in your app.json or app.config.js file for "firebase-messaging-expo-plugin".
         "mode" can be either "development" or "production".
-        Please see onesignal-expo-plugin's README.md for more details.`);
+        Please see firebase-messaging-expo-plugin's README.md for more details.`);
     }
     newConfig.modResults["aps-environment"] = onesignalProps.mode;
     return newConfig;
@@ -130,7 +130,9 @@ const withFirebaseMessagingNSE: ConfigPlugin<OneSignalPluginProps> = (
   props
 ) => {
   // support for monorepos where node_modules can be above the project directory.
-  const pluginDir = require.resolve("onesignal-expo-plugin/package.json");
+  const pluginDir = require.resolve(
+    "firebase-messaging-expo-plugin/package.json"
+  );
   const sourceDir = path.join(
     pluginDir,
     "../build/support/serviceExtensionFiles/"
