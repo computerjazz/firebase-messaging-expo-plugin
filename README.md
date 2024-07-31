@@ -11,7 +11,7 @@
   </a>
 </p>
 
-> The Firebase Messaging Expo plugin allows you to use OneSignal without leaving the managed workflow. Developed in collaboration with SweetGreen.
+> The Firebase Messaging Expo plugin allows you to use Firebase Image Notifications without leaving the managed workflow. Developed in collaboration with SweetGreen.
 
 - 🏠 [Homepage](https://github.com/OneSignal/onesignal-expo-plugin#readme)
 - 🖤 [npm](https://www.npmjs.com/package/onesignal-expo-plugin)
