@@ -4,7 +4,6 @@
  * @see https://documentation.onesignal.com/docs/react-native-sdk-setup#step-4-install-for-ios-using-cocoapods-for-ios-apps
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-const withFirebaseMessagingAndroid_1 = require("./withFirebaseMessagingAndroid");
 const withFirebaseMessagingIos_1 = require("./withFirebaseMessagingIos");
 const helpers_1 = require("../support/helpers");
 const withOneSignal = (config, props) => {
@@ -14,7 +13,7 @@ const withOneSignal = (config, props) => {
     }
     (0, helpers_1.validatePluginProps)(props);
     config = (0, withFirebaseMessagingIos_1.withFirebaseMessagingIos)(config, props);
-    config = (0, withFirebaseMessagingAndroid_1.withFirebaseMessagingAndroid)(config, props);
+    // config = withFirebaseMessagingAndroid(config, props);
     return config;
 };
 exports.default = withOneSignal;
