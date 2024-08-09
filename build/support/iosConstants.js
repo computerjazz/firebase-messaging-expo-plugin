@@ -6,6 +6,15 @@ exports.TARGETED_DEVICE_FAMILY = `"1,2"`;
 exports.NSE_PODFILE_SNIPPET = `
 target 'FirebaseImageNotificationServiceExtension' do
   use_frameworks! :linkage => :static
+  pod 'GoogleUtilities/AppDelegateSwizzler'
+  pod 'GoogleUtilities/MethodSwizzler'
+  pod 'GoogleUtilities/Network'
+  pod 'GoogleUtilities/NSData+zlib'
+  pod 'GoogleUtilities/AppDelegateSwizzler'
+  pod 'GoogleUtilities/Environment'
+  pod 'GoogleUtilities/Logger'
+  pod 'GoogleUtilities/UserDefaults'
+  pod 'GoogleUtilities/Reachability'
   pod 'Firebase/Messaging'
 end`;
 exports.NSE_PODFILE_REGEX = /target 'FirebaseImageNotificationServiceExtension'/;
